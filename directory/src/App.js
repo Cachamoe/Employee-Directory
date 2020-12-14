@@ -31,7 +31,7 @@ class App extends Component {
   componentDidMount() {
     API.getRandomUsers().then(employees => {
       this.setState({
-        employeeInfo: employees.data.results, 
+        employeeInfo: employees.data.results,
         originalInfo: employees.data.results,
       }); 
     });  
