@@ -4,6 +4,7 @@ import TableRow from "./components/TableRow";
 import React, { Component } from "react";
 import API from "./utils/API.js";
 import Search from "./components/Search";
+import Header from "./components/Header";
 
 class App extends Component {
   state = {
@@ -18,7 +19,6 @@ class App extends Component {
       [name]: value
     });
 
-    console.log(value)
     let newEmployees = this.state.originalInfo.filter(employee => {
       return employee.name.first.toLowerCase().includes(value.toLowerCase())
     });
@@ -40,6 +40,7 @@ class App extends Component {
   render() {
     return (
       <>
+      <Header/>
       <Search handleOnChange = {this.handleOnChange} keyword = {this.state.keyword}/>
       <TableRow employeeInfo = {this.state.employeeInfo}/>
       </>
