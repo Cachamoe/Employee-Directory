@@ -4,7 +4,9 @@ import "./style.css";
 function Search(props) {
     return (
         <>
-        Search: <input name = "keyword" value = {props.keyword} onChange = {props.handleOnChange} />
+        <div class="container">
+        <strong>Search:</strong> <input name = "keyword" value = {props.keyword} onChange = {props.handleOnChange} id="Search"/>
+        </div>
         </>
     );
 }
