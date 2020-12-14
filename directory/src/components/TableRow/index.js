@@ -7,8 +7,7 @@ function TableRow(props) {
             <thead>
                 <tr>
                     <th scope="col">Image</th>
-                    <th scope="col">First</th>
-                    <th scope="col">Last</th>
+                    <th scope="col">Name</th>
                     <th scope="col">Phone Number</th>
                     <th scope="col">Email</th>
                 </tr>
@@ -18,8 +17,7 @@ function TableRow(props) {
                     return (
                         <tr>
                         <th scope="row"><img src={employee.picture.large}/></th>
-                        <td>{employee.name.first}</td>
-                        <td>{employee.name.last}</td>
+                        <td>{employee.name.first + " " + employee.name.last}</td>
                         <td>{employee.phone}</td>
                         <td>{employee.email}</td>
                     </tr>
