@@ -7,7 +7,6 @@ class SearchResultContainer extends Component {
         results: []
     };
 
-
     searchEmployees = query => {
         API.search(query)
             .then(res => this.setState({ results: res.data.data }))

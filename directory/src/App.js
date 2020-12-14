@@ -14,7 +14,6 @@ class App extends Component {
   
   handleOnChange = (event) => {
     const {name, value} = event.target
-
     this.setState( {
       [name]: value
     });
