@@ -24,11 +24,11 @@ function TableRow(props) {
                     )
                 }) :
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
+                        <th scope="row">NA</th>
+                        <td>NA</td>
+                        <td>NA</td>
+                        <td>NA</td>
+                        <td>NA</td>
                     </tr>}
             </tbody>
         </table>
