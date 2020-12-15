@@ -12,10 +12,10 @@ class App extends Component {
     keyword: "",
     originalInfo: [],
   }
-  
+
   handleOnChange = (event) => {
-    const {name, value} = event.target
-    this.setState( {
+    const { name, value } = event.target
+    this.setState({
       [name]: value
     });
 
@@ -28,21 +28,41 @@ class App extends Component {
     });
   }
 
+  onSortChange = () => {
+    document.getElementById("#dropBtn").on("click", function () {
+      let newEmployeeOrder = this.state.originalInfo.sort((a, b) => {
+        let fa = a.name.last.toLowerCase();
+        let fb = b.name.last.toLowerCase();
+
+        if (fa < fb) {
+          return -1;
+        }
+        if (fa > fb) {
+          return 1;
+        }
+        return 0;
+      });
+      this.setState({
+        employeeInfo: newEmployeeOrder
+      });
+    });
+  }
+
   componentDidMount() {
     API.getRandomUsers().then(employees => {
       this.setState({
         employeeInfo: employees.data.results,
         originalInfo: employees.data.results,
-      }); 
-    });  
+      });
+    });
   }
 
   render() {
     return (
       <>
-      <Header/>
-      <Search handleOnChange = {this.handleOnChange} keyword = {this.state.keyword}/>
-      <TableRow employeeInfo = {this.state.employeeInfo}/>
+        <Header />
+        <Search handleOnChange={this.handleOnChange} keyword={this.state.keyword} />
+        <TableRow employeeInfo={this.state.employeeInfo} />
       </>
     );
   };

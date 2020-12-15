@@ -14,6 +14,9 @@ function TableRow(props) {
             </thead>
             <tbody>
                 {props.employeeInfo.length > 0 ? props.employeeInfo.map(employee => {
+                    <li key={employee.id}>
+                        {employee}
+                    </li>;
                     return (
                         <tr>
                             <th scope="row"><img src={employee.picture.large} /></th>
@@ -25,7 +28,6 @@ function TableRow(props) {
                 }) :
                     <tr>
                         <th scope="row">NA</th>
-                        <td>NA</td>
                         <td>NA</td>
                         <td>NA</td>
                         <td>NA</td>
