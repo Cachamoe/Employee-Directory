@@ -7,14 +7,14 @@ function TableRow(props) {
             <thead>
                 <tr>
                     <th scope="col">Image</th>
-                    <th scope="col"><button class="dropbtn" id="dropBtn"><strong>Name</strong><i class="fa fa-caret-down"></i></button></th>
+                    <th scope="col"><button class="dropbtn" onClick= {props.onSortChange}><strong>Name</strong><i class="fa fa-caret-down"></i></button></th>
                     <th scope="col">Phone Number</th>
                     <th scope="col">Email</th>
                 </tr>
             </thead>
             <tbody>
-                {props.employeeInfo.length > 0 ? props.employeeInfo.map(employee => {
-                    <li key={employee.id}>
+                {props.employeeInfo.length > 0 ? props.employeeInfo.map((employee) => {
+                    <li key={employee.email}>
                         {employee}
                     </li>;
                     return (

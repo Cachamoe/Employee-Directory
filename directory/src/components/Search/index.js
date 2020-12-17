@@ -5,7 +5,7 @@ function Search(props) {
     return (
         <>
         <div class="container">
-        <strong>Search:</strong> <input name = "keyword" value = {props.keyword} onChange = {props.handleOnChange} id="Search"/>
+        <strong>Search:</strong> <input name="keyword" value= {props.keyword} onChange= {props.handleOnChange} id="Search"/>
         </div>
         </>
     );

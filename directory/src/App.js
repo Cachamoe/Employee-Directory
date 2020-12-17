@@ -11,6 +11,7 @@ class App extends Component {
     employeeInfo: [],
     keyword: "",
     originalInfo: [],
+    sortType: "Ascending",
   }
 
   handleOnChange = (event) => {
@@ -29,24 +30,23 @@ class App extends Component {
   }
 
   onSortChange = () => {
-    document.getElementById("#dropBtn").on("click", function () {
-      let newEmployeeOrder = this.state.originalInfo.sort((a, b) => {
-        let fa = a.name.last.toLowerCase();
-        let fb = b.name.last.toLowerCase();
+    let newEmployeeOrder = this.state.originalInfo.sort((a, b) => {
+      let fa = a.name.last.toLowerCase();
+      let fb = b.name.last.toLowerCase();
 
-        if (fa < fb) {
-          return -1;
-        }
-        if (fa > fb) {
-          return 1;
-        }
-        return 0;
-      });
-      this.setState({
-        employeeInfo: newEmployeeOrder
-      });
+      if (fa < fb) {
+        return -1;
+      }
+      if (fa > fb) {
+        return 1;
+      }
+      return 0;
+    });
+    this.setState({
+      employeeInfo: newEmployeeOrder
     });
   }
+
 
   componentDidMount() {
     API.getRandomUsers().then(employees => {
@@ -62,7 +62,7 @@ class App extends Component {
       <>
         <Header />
         <Search handleOnChange={this.handleOnChange} keyword={this.state.keyword} />
-        <TableRow employeeInfo={this.state.employeeInfo} />
+        <TableRow employeeInfo={this.state.employeeInfo} onSortChange={this.onSortChange} />
       </>
     );
   };
