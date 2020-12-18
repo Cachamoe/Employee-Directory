@@ -29,24 +29,49 @@ class App extends Component {
     });
   }
 
-  onSortChange = () => {
-    let newEmployeeOrder = this.state.originalInfo.sort((a, b) => {
-      let fa = a.name.last.toLowerCase();
-      let fb = b.name.last.toLowerCase();
 
-      if (fa < fb) {
-        return -1;
-      }
-      if (fa > fb) {
-        return 1;
-      }
-      return 0;
-    });
+  onSortChange = () => {
+    if (this.state.sortType === "Ascending") {
+      this.Descending();
+      this.setState({
+        sortType: "Descending",
+      });
+    }
+    if (this.state.sortType === "Descending") {
+      this.Ascending();
+      this.setState({
+        sortType: "Ascending",
+      });
+    };
+  }
+
+  Ascending = () => {
+    let newEmployeeOrder = this.state.originalInfo.sort((a, b) => {
+          let fa = a.name.last.toLowerCase();
+          let fb = b.name.last.toLowerCase();
+  
+          if (fa > fb) {
+            return 1;
+          }
+        });
     this.setState({
       employeeInfo: newEmployeeOrder
     });
   }
 
+  Descending = () => {
+    let newEmployeeOrder = this.state.originalInfo.sort((a, b) => {
+          let fa = a.name.last.toLowerCase();
+          let fb = b.name.last.toLowerCase();
+    
+          if (fa < fb) {
+            return -1;
+          }
+        });
+    this.setState({
+      employeeInfo: newEmployeeOrder
+    });
+  }
 
   componentDidMount() {
     API.getRandomUsers().then(employees => {
