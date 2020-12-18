@@ -37,7 +37,7 @@ class App extends Component {
         sortType: "Descending",
       });
     }
-    if (this.state.sortType === "Descending") {
+    else if (this.state.sortType === "Descending") {
       this.Ascending();
       this.setState({
         sortType: "Ascending",
@@ -51,7 +51,7 @@ class App extends Component {
           let fb = b.name.last.toLowerCase();
   
           if (fa > fb) {
-            return 1;
+            return -1;
           }
         });
     this.setState({
