@@ -1,5 +1,5 @@
 # Employee Directory
-![](public/Screen%20Shot%202020-12-18%20at%2010.04.02%20AM.png)
+![](directory/public/Screen%20Shot%202020-12-18%20at%2010.04.02%20AM.png)
 ## Overview
 This is an application that allows users to search for employees and sort them by name!
 
