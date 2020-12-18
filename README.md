@@ -3,7 +3,7 @@
 ## Overview
 This is an application that allows users to search for employees and sort them by name!
 
-Here is a link to the deployed webpage: []
+Here is a link to the deployed webpage: [https://cachamoe.github.io/Employee-Directory/]
 
 I completed this assignment given the acceptance criteria: 
 
