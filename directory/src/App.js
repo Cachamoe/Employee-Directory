@@ -53,6 +53,7 @@ class App extends Component {
           if (fa > fb) {
             return -1;
           }
+          document.getElementById("dropBtn").classList.toggle("fa-fa-caret-down")
         });
     this.setState({
       employeeInfo: newEmployeeOrder
@@ -67,6 +68,7 @@ class App extends Component {
           if (fa < fb) {
             return -1;
           }
+          document.getElementById("dropBtn").classList.toggle("fa-fa-caret-up")
         });
     this.setState({
       employeeInfo: newEmployeeOrder

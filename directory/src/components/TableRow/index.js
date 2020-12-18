@@ -7,7 +7,7 @@ function TableRow(props) {
             <thead>
                 <tr>
                     <th scope="col">Image</th>
-                    <th scope="col"><button class="dropbtn" onClick= {props.onSortChange}><strong>Name</strong><i class="fa fa-caret"></i></button></th>
+                    <th scope="col"><button id="dropBtn" onClick= {props.onSortChange}><strong>Name</strong><i class="fa fa-caret-down"></i></button></th>
                     <th scope="col">Phone Number</th>
                     <th scope="col">Email</th>
                 </tr>
