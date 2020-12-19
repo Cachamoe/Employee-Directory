@@ -1,7 +1,7 @@
 {
   "name": "directory",
   "version": "0.1.0",
-  "homepage": "https://Cachamoe.github.io",
+  "homepage": "https://cachamoe.github.io/Employee-Directory/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.6",
