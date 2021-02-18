@@ -20,7 +20,7 @@ THEN a table of employees should render
 1) Ability to search for employees based on list
 2) Ability to sort employee list by name
 
-## Programs 
+## Technologies 
 HTML, CSS, Javascript, React, JSON
 
 ## License 
